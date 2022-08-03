@@ -7,6 +7,7 @@ include '../connection.php';
 include "../log_first.php";
 // include "../auth.php";
 
+
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +40,12 @@ include "../log_first.php";
 
     if(isset($_SESSION["success"])){
         echo "<h2> ". $_SESSION["success"] ." </h2>";
-        unset($_SESSION["success"]); 
+        unset($_SESSION["success"]);
     }
 
     if(isset($_SESSION["error"])){
         echo "<h2> ". $_SESSION["error"] ." </h2>";
-        unset($_SESSION["error"]); 
+        unset($_SESSION["error"]);
     }
     
     ?>
@@ -59,6 +60,7 @@ include "../log_first.php";
 
         // // Create connection
         // $conn = new mysqli($servername, $username, $password, $dbname);
+
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

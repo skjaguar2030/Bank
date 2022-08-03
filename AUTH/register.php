@@ -1,8 +1,6 @@
 <?php 
 
 include '../connection.php';
-ini_set('display_errors', 1);
-error_reporting(~0);
 
 if(isset($_POST["register"])){
 $firstName = $_POST["firstName"];

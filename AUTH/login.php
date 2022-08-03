@@ -2,9 +2,6 @@
 session_start();
 include '../connection.php';
 
-ini_set('display_errors', 1);
-error_reporting(~0);
-
 if(isset($_POST["login"])) {
     $email = $_POST['email'];
 
@@ -42,8 +39,6 @@ if(isset($_POST["login"])) {
         header('location:../CUSTOMER/list.php');
         
     }
-
-    
 
 }
 

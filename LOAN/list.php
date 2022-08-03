@@ -1,13 +1,13 @@
 <?php 
 session_start();
-ini_set('display_errors', 1);
-error_reporting(~0);
-
+// ini_set('display_errors', 1);
+// error_reporting(~0);
+include '../connection.php';
 include "../log_first.php";
 
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE htzml>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,6 +42,7 @@ include "../log_first.php";
         echo "<h2> ". $_SESSION["error"] ." </h2>";
         unset($_SESSION["error"]); 
     }
+
         
     
     ?>
@@ -50,12 +51,12 @@ include "../log_first.php";
     <!-- Creating a table for our database so that we can display the CRUD operation -->
     <?php  
     
-        $servername = 'localhost';
-        $username = 'root';
-        $password  = '';
-        $dbname = 'bank';
+        // $servername = 'localhost';
+        // $username = 'root';
+        // $password  = '';
+        // $dbname = 'bank';
 
-        $conn = new mysqli ($servername, $username, $password, $dbname);
+        // $conn = new mysqli ($servername, $username, $password, $dbname);
 
         if($conn->connect_error) {
             die('connection failed:' . $conn->connect_error); // whats the meaning of these arrows
@@ -108,17 +109,17 @@ include "../log_first.php";
         // Setting a session and calling it when the DELETE operation is executed
         if ($result === TRUE) {
             $_SESSION["success_delete"] = "ffffffffff";
-            session_destroy();
+            
         } else { die  ($conn->error); }
 
         if(isset($_SESSION["success_delete"])){
             echo "<h2> ". $_SESSION["success_delete"] ." </h2>";
-            session_destroy(); 
+            unset($_SESSION["success_delete"]); 
         }
 
         if(isset($_SESSION["error"])){
             echo "<h2> ". $_SESSION["error"] ." </h2>";
-             session_destroy(); 
+            unset($_SESSION["error"]); 
         }
     }
 

@@ -1,16 +1,16 @@
 <?php 
 session_start();
-ini_set('display_errors', 1);
-error_reporting(~0);
-
+// ini_set('display_errors', 1);
+// error_reporting(~0);
+include '../connection.php';
 include "../log_first.php";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "bank";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "bank";
 
-$conn = new mysqli ($servername, $username, $password, $dbname);
+// $conn = new mysqli ($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

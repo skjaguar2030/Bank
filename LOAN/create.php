@@ -1,20 +1,20 @@
 <?php 
 
     session_start();
-    ini_set('display_errors', 1);
-    error_reporting(~0);
-
+    // ini_set('display_errors', 1);
+    // error_reporting(~0);
+    include '../connection.php';
     include "../log_first.php";
 
 
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $dbname = 'bank';
+    // $servername = 'localhost';
+    // $username = 'root';
+    // $password = '';
+    // $dbname = 'bank';
 
 
-    $conn = new mysqli ($servername, $username, $password, $dbname); // where is this variable coming from? what does mysqli mean? is this a class 
-    //Answer: it's a built in PHP class 
+    // $conn = new mysqli ($servername, $username, $password, $dbname); // where is this variable coming from? what does mysqli mean? is this a class 
+    // //Answer: it's a built in PHP class 
 
     // echo $_SESSION["success"];
 

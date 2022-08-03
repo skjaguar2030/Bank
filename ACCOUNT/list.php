@@ -1,6 +1,7 @@
 <?php 
     session_start();
 
+    include '../connection.php';
     include "../log_first.php";
 
 ?>
@@ -41,17 +42,10 @@
     
         if(isset($_SESSION["error"])){
             echo "<h2> ". $_SESSION["error"] ." </h2>";
-            unset($_SESSION["error"]); 
+            unset($_SESSION["error"]);
         }
     
-            
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "bank";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

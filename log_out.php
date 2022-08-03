@@ -11,4 +11,5 @@ if(isset($_COOKIE['Identification'])){
     header('location:AUTH/login.php');
 }
 
+
 ?> 

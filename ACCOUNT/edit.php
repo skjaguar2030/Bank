@@ -3,14 +3,10 @@ session_start();
 ini_set('display_errors', 1);
 error_reporting(~0);
 
+include '../connection.php';
 include "../log_first.php";
 
-$servername = "localhost";
-$username = "root";
-$password = ""; 
-$dbname = "bank";
 
-$conn = new mysqli ($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -31,9 +27,7 @@ $conn = new mysqli ($servername, $username, $password, $dbname);
         $accBalance = $row['accBalance'];
         
     }
-    else{
-        header('location: list.php');
-    }
+    else{ header('location: list.php'); }
 
     if(isset($_POST["update-account"])){
         // update the sql table with the form value where id = $acctype;
